@@ -9,11 +9,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // create a new user
-// extract the req body
-// check is the email already exist
-// if  yes throw an errror
-// if no hash the password and create the user in its user tables
-
 export const createUser = async (req, res) => {
     const { email, name, password } = req.body
 
@@ -51,11 +46,6 @@ export const createUser = async (req, res) => {
 
 
 // log a user in
-// accept only the email and password in the req-body
-// check the email and password if they already exist in the db
-// send an error for invlaid credentilals
-// log the user is the detais are corect sign or verify the token for each user
-
 export const loginUser = async (req, res) => {
     const { email, password } = req.body
 

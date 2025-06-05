@@ -7,7 +7,6 @@ class User extends Model {}
 
 User.init(
   {
-    // Model attributes are defined here
     id: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4, // Or DataTypes.UUIDV1

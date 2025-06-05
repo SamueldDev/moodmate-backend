@@ -23,11 +23,11 @@ Mood.init(
     },
   },
   {
-    // Other model options go here
-    sequelize, // We need to pass the connection instance
-    modelName: 'Mood', // We need to choose the model name
-    tableName: "moods",
-    timestamps: true,
+    // Other model options
+    sequelize, // Wpass the connection instance
+    modelName: 'Mood', // choose the model name
+    tableName: "moods", // choose table name
+    timestamps: true, // chose a timestamp
   },
 );
 

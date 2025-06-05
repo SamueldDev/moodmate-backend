@@ -8,8 +8,7 @@ dotenv.config();
 
 export const protectedAction = (req, res, next) => {
   const { authorization } = req.headers;
-
-  console.log("Authorization: ", authorization);
+  
   if (!authorization) {
     return res.status(401).json({
       status: false,
@@ -29,10 +28,7 @@ export const protectedAction = (req, res, next) => {
       });
     }
 
-    const verified = decoded.payload
-
-    req.user = verified
-    console.log(verified)
+    req.user = decoded.payload
 
     next();
   });

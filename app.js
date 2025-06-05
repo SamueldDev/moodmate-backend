@@ -6,6 +6,9 @@ import expres from "express";
 import { sequelize } from "./models/index.js"
 import userRoute from "./routes/userRoute.js"
 
+import suggestionRoute from "./routes/suggestionRoute.js"
+import moodRoute from "./routes/moodRoute.js"
+
 import dotenv from "dotenv"
 dotenv.config()
 
@@ -14,7 +17,7 @@ const app = expres()
 const PORT = process.env.PORT
 
 //parse the json body
-app.use(expres.json())
+app.use(expres.json())  
 
 // test the route
 app.get("/", (req, res) => {
@@ -23,14 +26,16 @@ app.get("/", (req, res) => {
 
 // routes
 app.use("/api/user", userRoute)
+app.use("/api/moods", moodRoute)
+app.use("/api/suggestions", suggestionRoute)  
 
- const startSever = async () => {
+ const startSever = async () => {  
 
     try {
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
 
-    await sequelize.sync({ alter: true})
+    await sequelize.sync({ alter: true})    
     console.log("database synced")
 
     //   await sequelize.sync({ force: true})
@@ -40,16 +45,15 @@ app.use("/api/user", userRoute)
     console.log(`server running at port ${PORT}`)  
     })  
 
-    } catch (error) {  
+    } catch (error) {   
     console.error('Unable to connect to the database:', error);
-    }
- }
+    }  
+ }  
 
 
-startSever()  
+startSever()    
 
 export default app  
-
 
 
 // will start authentication in mthe morning

@@ -7,9 +7,9 @@ const router = express.Router()
 
 
 // create user
-router.use("/register", createUser)
+router.post("/register", createUser)
 
 //log user in
-router.use("/login", loginUser)
+router.post("/login", loginUser)
 
 export default router
