@@ -37,4 +37,3 @@ export default Suggestion;
 
 
  
-// { type: DataTypes.TEXT },mood: { type: DataTypes.ENUM('happy', 'sad', 'tired', 'angry', 'relaxed') },

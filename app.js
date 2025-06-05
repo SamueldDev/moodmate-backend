@@ -4,6 +4,7 @@
 
 import expres from "express";
 import { sequelize } from "./models/index.js"
+import userRoute from "./routes/userRoute.js"
 
 import dotenv from "dotenv"
 dotenv.config()
@@ -20,6 +21,9 @@ app.get("/", (req, res) => {
     res.send("moodmate api is live")
 })
 
+// routes
+app.use("/api/user", userRoute)
+
  const startSever = async () => {
 
     try {
@@ -34,7 +38,7 @@ app.get("/", (req, res) => {
       
     app.listen(PORT, () => {
     console.log(`server running at port ${PORT}`)  
-    })
+    })  
 
     } catch (error) {  
     console.error('Unable to connect to the database:', error);
@@ -42,7 +46,7 @@ app.get("/", (req, res) => {
  }
 
 
-startSever()
+startSever()  
 
 export default app  
 
