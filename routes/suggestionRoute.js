@@ -3,7 +3,7 @@
 import express from "express"
 
 
-import { getSuggestionByMood } from "../controllers/suggestionController.js"
+import { getSuggestionByMood, getAllSuggestion } from "../controllers/suggestionController.js"
 
 const router = express.Router()
 
@@ -52,5 +52,9 @@ const router = express.Router()
  */
 
 router.get("/:mood", getSuggestionByMood)
+
+router.get("/", getAllSuggestion)
+
+
 
 export default router

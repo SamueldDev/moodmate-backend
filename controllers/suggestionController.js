@@ -32,3 +32,10 @@ export const getSuggestionByMood = async (req, res) =>{
     }
 
 }
+
+
+// get all suggestion from the db
+export const getAllSuggestion = async (req, res) => {
+  const suggestions = await Suggestion.findAll(); // return everything
+  res.json(suggestions);
+}

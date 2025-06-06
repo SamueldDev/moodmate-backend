@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 
 // routes
 app.use("/api/user", userRoute)  
-app.use("/api/moods", moodRoute)  
+app.use("/api/moods", moodRoute)    
 app.use("/api/suggestions", suggestionRoute)  
 
  const startSever = async () => {    
@@ -43,14 +43,14 @@ app.use("/api/suggestions", suggestionRoute)
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
 
-    await sequelize.sync({ alter: true})      
+    await sequelize.sync({ alter: true})         
     console.log("database synced")  
 
     //   await sequelize.sync({ force: true})
     //   console.log("database dropped and recreated")  
       
     app.listen(PORT, () => {
-    console.log(`server running at port ${PORT}`)  
+    console.log(`server running at port ${PORT}`)     
     })   
 
     } catch (error) {   
