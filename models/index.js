@@ -6,8 +6,9 @@ import Mood from "./moodModel.js";
 
 
 // associations
-User.hasMany(Mood);
-Mood.belongsTo(User);
+User.hasMany(Mood, { foreignKey: 'userId' }); // 👈 Add this
+Mood.belongsTo(User, { foreignKey: 'userId' });
+
 
 
 export {sequelize, User, Suggestion, Mood}

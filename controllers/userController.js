@@ -10,7 +10,7 @@ dotenv.config();
 
 // create a new user
 export const createUser = async (req, res) => {
-    const { email, password } = req.body
+    const { email, password, name } = req.body
 
     const exitingUser = await User.findOne({ where: { email } });
 
