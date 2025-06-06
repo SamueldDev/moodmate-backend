@@ -22,7 +22,7 @@ await Suggestion.bulkCreate([
   {
     category: 'quote',
     content: 'Speak when you are angry and you will make the best speech you will ever regret.',
-    mood: 'angry'
+    mood: 'angry'  
   },
    {
     category: 'activity',
