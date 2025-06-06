@@ -9,7 +9,7 @@ User.init(
   {
     id: {
     type: DataTypes.UUID,
-    defaultValue: DataTypes.UUIDV4, // Or DataTypes.UUIDV1
+    defaultValue: DataTypes.UUIDV4, 
     primaryKey: true,
     },
     name: {
@@ -26,11 +26,11 @@ User.init(
     },
   },
   {
-    // Other model options go here
-    sequelize, // We need to pass the connection instance
-    modelName: 'User', // We need to choose the model name
-    tableName: "users",
-    timestamps: true,
+    // Other model options
+    sequelize, // ass the connection instance
+    modelName: 'User', // model name
+    tableName: "users", // table name
+    timestamps: true, // timestamp
   },
 );
 

@@ -8,8 +8,7 @@ class Suggestion extends Model {}
 
 Suggestion.init(
   {
-    // Model attributes are defined here
-
+    
     category: { 
         type: DataTypes.STRING  // e.g., "quote", "music", "activity"
      },
@@ -23,11 +22,11 @@ Suggestion.init(
 
   },
   {
-    // Other model options go here
-    sequelize, // We need to pass the connection instance
-    modelName: 'Suggestion', // We need to choose the model name
-    tableName: "suggestions",
-    timestamps: true,
+    // Other model options
+    sequelize, // pass the connection instance
+    modelName: 'Suggestion', // model name
+    tableName: "suggestions", // table name
+    timestamps: true, // timsestamp
   },
 );
 

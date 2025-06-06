@@ -7,7 +7,7 @@ class Mood extends Model {}
 
 Mood.init(
   {
-    // Model attributes are defined here
+    
     mood: {
     type: DataTypes.ENUM('happy', 'sad', 'tired', 'angry', 'relaxed'),
     allowNull: false,
@@ -16,7 +16,7 @@ Mood.init(
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: "users", // make sure this matches your Trips table name
+        model: "users", // must matches Trips table name
         key: "id",
       },
       onDelete: "CASCADE",
@@ -24,10 +24,10 @@ Mood.init(
   },
   {
     // Other model options
-    sequelize, // Wpass the connection instance
-    modelName: 'Mood', // choose the model name
-    tableName: "moods", // choose table name
-    timestamps: true, // chose a timestamp
+    sequelize, // pass the connection instance
+    modelName: 'Mood', // model name
+    tableName: "moods", // table name
+    timestamps: true, // timestamp
   },
 );
 

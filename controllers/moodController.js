@@ -29,7 +29,6 @@ export const createMood = async (req, res) => {
 
 
 // get the latest mode
-
 export const getLatestMood = async (req, res) => {
   const userId = req.user.id;
 

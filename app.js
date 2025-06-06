@@ -8,14 +8,22 @@ import userRoute from "./routes/userRoute.js"
 
 import suggestionRoute from "./routes/suggestionRoute.js"
 import moodRoute from "./routes/moodRoute.js"
+import { setupSwagger } from "./config/swagger.js";
+import cors from "cors";
+
+
 
 import dotenv from "dotenv"
 dotenv.config()
 
 const app = expres()
 
-const PORT = process.env.PORT
+setupSwagger(app) 
 
+const PORT = process.env.PORT || 5000
+
+app.use(cors());
+ 
 //parse the json body
 app.use(expres.json())  
 
@@ -29,7 +37,7 @@ app.use("/api/user", userRoute)
 app.use("/api/moods", moodRoute)
 app.use("/api/suggestions", suggestionRoute)  
 
- const startSever = async () => {  
+ const startSever = async () => {    
 
     try {
     await sequelize.authenticate();
@@ -56,4 +64,4 @@ startSever()
 export default app  
 
 
-// will start authentication in mthe morning
+
