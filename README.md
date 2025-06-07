@@ -1,8 +1,6 @@
-🧠 MoodMate API
+# 🧠 MoodMate API
 
 MoodMate is a simple backend API that allows users to log their current mood and receive personalized suggestions (quotes, music, activities) based on how they feel.
-
----
 
 ## 🔧 Tech Stack
 
@@ -13,14 +11,11 @@ MoodMate is a simple backend API that allows users to log their current mood and
 - Swagger (OpenAPI) Docs
 - Postman Collection Support
 
----
-
 ## 🚀 Live Demo
 
 📡 Base URL: [`https://moodmate-production.up.railway.app/`](https://moodmate-production.up.railway.app/)  
 📘 Swagger Docs: [`/api-docs`](https://moodmate-production.up.railway.app/api-docs)  
 📬 Postman Collection: - [View on GitHub](./MoodMate.postman_collection.json)
----
 
 ## 📦 Getting Started
 
