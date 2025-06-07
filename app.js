@@ -32,6 +32,7 @@ app.get("/", (req, res) => {
     res.send("moodmate api is live")
 })
 
+
 // routes
 app.use("/api/user", userRoute)  
 app.use("/api/moods", moodRoute)    
