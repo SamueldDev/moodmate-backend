@@ -34,11 +34,11 @@ app.get("/", (req, res) => {
 
 
 // routes
-app.use("/api/user", userRoute)  
+app.use("/api/user", userRoute)    
 app.use("/api/moods", moodRoute)    
 app.use("/api/suggestions", suggestionRoute)  
 
- const startSever = async () => {    
+ const startSever = async () => {      
 
     try {
     await sequelize.authenticate();

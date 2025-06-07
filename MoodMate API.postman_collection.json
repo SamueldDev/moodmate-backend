@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "11209209-9453-4708-8a36-3d26036c9f45",
+		"_postman_id": "c562f14f-d8d1-4add-9a52-058de8b91a1d",
 		"name": "MoodMate API",
 		"description": "API documentation for the MoodMate backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -265,7 +265,7 @@
 											"variable": [
 												{
 													"key": "mood",
-													"value": "angry",
+													"value": "happy",
 													"description": "(Required) Mood to get suggestions for"
 												}
 											]
@@ -426,7 +426,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n  {\n    \"id\": 1,\n    \"mood\": \"Happy\",\n    \"message\": \"Stay positive!\",\n    \"createdAt\": \"1978-09-15T06:40:16.445Z\",\n    \"updatedAt\": \"1975-02-27T01:40:11.218Z\"\n  },\n  {\n    \"id\": 1,\n    \"mood\": \"Happy\",\n    \"message\": \"Stay positive!\",\n    \"createdAt\": \"1993-10-26T09:42:54.552Z\",\n    \"updatedAt\": \"2012-06-27T10:15:38.822Z\"\n  }\n]"
+									"body": "[\n  {\n    \"id\": 1,\n    \"mood\": \"Happy\",\n    \"message\": \"Stay positive!\",\n    \"createdAt\": \"1979-03-09T10:00:21.938Z\",\n    \"updatedAt\": \"1945-08-07T02:56:31.682Z\"\n  },\n  {\n    \"id\": 1,\n    \"mood\": \"Happy\",\n    \"message\": \"Stay positive!\",\n    \"createdAt\": \"2010-05-11T17:50:01.967Z\",\n    \"updatedAt\": \"1969-11-12T18:36:20.690Z\"\n  }\n]"
 								},
 								{
 									"name": "Server error",
@@ -702,7 +702,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://moodmate-production.up.railway.app/"
+			"value": "https://moodmate-production.up.railway.app"
 		}
 	]
 }

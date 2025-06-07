@@ -15,7 +15,7 @@ MoodMate is a simple backend API that allows users to log their current mood and
 
 📡 Base URL: [`https://moodmate-production.up.railway.app/`](https://moodmate-production.up.railway.app/)  
 📘 Swagger Docs: [`/api-docs`](https://moodmate-production.up.railway.app/api-docs)  
-📬 Postman Collection: - [View on GitHub](./MoodMate.postman_collection.json)
+📬 Postman Collection: - [View on GitHub](./MoodMate%20API.postman_collection.json)
 
 ## 📦 Getting Started
 
