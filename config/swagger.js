@@ -20,7 +20,7 @@ const options = {
     },
     servers: [
         {
-        url: "https://moodmate-production.up.railway.app/",
+        url: "https://moodmate-production.up.railway.app",
         description: "Production server",
       },
         {
