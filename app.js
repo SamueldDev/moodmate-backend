@@ -9,7 +9,7 @@ import userRoute from "./routes/userRoute.js"
 import suggestionRoute from "./routes/suggestionRoute.js"
 import moodRoute from "./routes/moodRoute.js"
 import { setupSwagger } from "./config/swagger.js";
-import cors from "cors";
+import cors from "cors";   
 
 
 

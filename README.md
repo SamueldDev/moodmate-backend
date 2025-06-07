@@ -1,179 +1,155 @@
-
-
-
 🧠 MoodMate API
-<!-- //MD041/first-line-heading/first-line-h1:first line in afile should be top level -->
-MoodMate is a simple backend API that allows users to log their current mood and receive personalized suggestions such as quotes, music, and activities based on how they feel.
 
-🔧 Technologies Used
-Node.js + Express.js
+MoodMate is a simple backend API that allows users to log their current mood and receive personalized suggestions (quotes, music, activities) based on how they feel.
 
-Sequelize ORM
+---
 
-PostgreSQL
+## 🔧 Tech Stack
 
-JWT Authentication
+- Node.js + Express.js
+- PostgreSQL + Sequelize ORM
+- JWT Authentication
+- Deployed on Railway
+- Swagger (OpenAPI) Docs
+- Postman Collection Support
 
-Hosted on Railway
+---
 
-🚀 Getting Started
-📦 Prerequisites
-Node.js (v18+)
+## 🚀 Live Demo
 
-PostgreSQL installed locally or cloud DB (e.g., Railway)
+📡 Base URL: [`https://moodmate.up.railway.app`](https://moodmate.up.railway.app)  
+📘 Swagger Docs: [`/api-docs`](https://moodmate.up.railway.app/api-docs)  
+📬 Postman Collection: [`MoodMate.postman_collection.json`](./MoodMate.postman_collection.json)
 
-Railway CLI (optional for deployment)
+---
 
-🛠 Installation
+## 📦 Getting Started
 
+### ✅ Prerequisites
+
+- Node.js (v18+)
+- PostgreSQL (local or cloud like Railway)
+- Railway CLI *(optional)*
+
+### 🛠 Installation
+
+```bash
 git clone https://github.com/SamueldDev/moodmate.git
-
 cd moodmate
-
 npm install
 
 
 🗂 Environment Setup
-Create a .env file with the following:
+
+Create a .env file
 
 PORT=7000
-
 DATABASE_URL=your_postgres_connection_url
-
 JWT_SECRET=your_secret_key
 
-Replace DATABASE_URL with your local or cloud PostgreSQL connection string.
+Then start the app
 
-npm run start
+npm start
 
 
 📮 API Endpoints
-All endpoints require a valid JWT unless stated otherwise.
+All endpoints (except GET /api/suggestions/:mood) require a valid JWT.
 
-🔐 Authentication
+🔐 Auth Routes
+
 POST /api/users/register
 
 Register a new user.
 
-Body
-{
-  "email": "user@example.com",
-
-  "password": "securePassword"
-}
-
-
 POST /api/users/login
-Returns a JWT for authorization.
 
-Body
-{
-  "email": "user@example.com",
+Returns a JWT token.
 
-  "password": "securePassword"
-}
-
-
-Response
 {
   "token": "your.jwt.token"
 }
 
 🧘 Mood Tracking
-POST /api/moods
-Submit a mood (auth required).
 
-Body
+POST /api/moods
+
+Submit your current mood (auth required).
+
 {
   "mood": "sad"
 }
 
-Response
-{
-  "id": 1,
-
-  "userId": 123,
-
-  "mood": "sad",
-
-  "createdAt": "2025-06-05T12:34:56Z",
-
-  "suggestions": [
-    {
-      "category": "quote",
-
-      "content": "Keep your head up."
-    },
-    {
-      "category": "music",
-
-      "content": "https://open.spotify.com/track/happy"
-    }
-  ]
-}
-
-
 GET /api/moods/latest
 
-Returns the user's most recent mood entry.
+Returns your latest mood and suggestions.
 
-💡 Suggestions
+💡 Mood Suggestions
+
 GET /api/suggestions/:mood
-Returns suggestions for a given mood (sad, happy, tired, angry, relaxed).
 
-Example
+Returns mood-specific suggestions (quote, music, activity).
 
 GET /api/suggestions/sad
 
-Response
+Response:
+
 [
+
   {
     "category": "quote",
-
     "content": "Keep your head up."
 
   },
 
   {
     "category": "music",
-
     "content": "https://open.spotify.com/track/sad-song"
   }
+
 ]
 
+🔍 API Documentation
 
-🧪 Testing
-Using Postman
-Import the included MoodMate.postman_collection.json file
+Interactive Swagger UI available at:
 
-Set your JWT as a Bearer token under Authorization tab
+https://moodmate.up.railway.app/api-docs
 
-Try endpoints like /api/moods, /api/suggestions/:mood, etc.
-Using curl
+🧪 Testing the API
+
+🧰 With Postman
+
+Import the MoodMate.postman_collection.json
+
+Set your JWT under Authorization → Bearer Token
+
+Try routes like /api/moods, /api/suggestions/:mood
+
+🖥 With curl
+
 curl -X GET http://localhost:7000/api/suggestions/sad
 
-🌐 Live Deployment
-The backend is deployed and accessible at:
-
-🔗 https://moodmate.up.railway.app
-
 📁 Project Structure
+
 moodmate/
 ├── controllers/
 ├── models/
 ├── routes/
-├── seed/
 ├── middleware/
+├── seed/
 ├── .env
 └── index.js
 
 
 📌 Future Improvements
-Swagger documentation at /api-docs
 
-Mood analytics dashboard
+✅ Swagger UI docs
 
-Daily mood reminder emails
+📊 Mood analytics dashboard
 
-🧑‍💻 Author
-Your Name – SamuelDdev
+📅 Daily mood reminder emails
+
+📱 Optional minimal frontend UI
+
+👨‍💻 Author
+
+SamuelDdev – GitHub

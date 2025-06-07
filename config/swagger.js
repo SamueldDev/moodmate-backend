@@ -19,9 +19,14 @@ const options = {
       description: 'API documentation for the MoodMate backend',
     },
     servers: [
-      {
-        url: 'http://localhost:7000',
+        {
+        url: "https://moodmate-production.up.railway.app/",
+        description: "Production server",
       },
+        {
+          url: "http://localhost:3000",
+          description: "Local development server",
+        },
     ],
     tags: [
       {

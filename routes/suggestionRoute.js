@@ -53,6 +53,43 @@ const router = express.Router()
 
 router.get("/:mood", getSuggestionByMood)
 
+
+
+ /**
+ * @swagger
+ * /api/suggestions:
+ *   get:
+ *     summary: Retrieve all mood suggestions
+ *     tags: [Suggestions]
+ *     responses:
+ *       200:
+ *         description: A list of all suggestions
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: integer
+ *                     example: 1
+ *                   mood:
+ *                     type: string
+ *                     example: "Happy"
+ *                   message:
+ *                     type: string
+ *                     example: "Stay positive!"
+ *                   createdAt:
+ *                     type: string
+ *                     format: date-time
+ *                   updatedAt:
+ *                     type: string
+ *                     format: date-time
+ *       500:
+ *         description: Server error
+ */
+
 router.get("/", getAllSuggestion)
 
 
