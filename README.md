@@ -106,7 +106,7 @@ Response:
 
 Interactive Swagger UI available at:
 
-https://moodmate.up.railway.app/api-docs
+https://moodmate-production.up.railway.app/api-docs
 
 🧪 Testing the API
 
@@ -120,7 +120,7 @@ Try routes like /api/moods, /api/suggestions/:mood
 
 🖥 With curl
 
-curl -X GET http://localhost:7000/api/suggestions/sad
+curl -X GET http://localhost:3000/api/suggestions/sad
 
 📁 Project Structure
 
