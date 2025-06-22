@@ -29,7 +29,7 @@ User.init(
     // Other model options
     sequelize, // ass the connection instance
     modelName: 'User', // model name
-    tableName: "users", // table name
+    tableName: "mood_users", // table name
     timestamps: true, // timestamp
   },
 );

@@ -47,9 +47,7 @@ app.use("/api/suggestions", suggestionRoute)
     await sequelize.sync({ alter: true})         
     console.log("database synced")  
 
-    //   await sequelize.sync({ force: true})
-    //   console.log("database dropped and recreated")  
-      
+ 
     app.listen(PORT, () => {
     console.log(`server running at port ${PORT}`)     
     })   
@@ -63,6 +61,13 @@ app.use("/api/suggestions", suggestionRoute)
 startSever()      
 
 export default app  
+
+
+
+
+   //   await sequelize.sync({ force: true})
+    //   console.log("database dropped and recreated")  
+      
 
 
 
