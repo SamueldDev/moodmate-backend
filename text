@@ -1,0 +1,11 @@
+
+
+//   await sequelize.sync({ force: true})
+//   console.log("database dropped & recreated")  
+
+// await sequelize.sync({ alter: true}) 
+//     console.log("database synced") 
+ 
+      
+
+// node seed/seedSuggestion.js  

@@ -41,8 +41,8 @@ app.use("/api/suggestions", suggestionRoute)
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
 
-    await sequelize.sync({ alter: true}) 
-    console.log("database synced") 
+    await sequelize.sync(); 
+    console.log("database synced"); 
  
     app.listen(PORT, () => {
     console.log(`server running at port ${PORT}`)     
@@ -59,8 +59,4 @@ startSever()
 export default app  
 
 
-  //   await sequelize.sync({ force: true})
-  //   console.log("database dropped & recreated")  
-      
-
-// node seed/seedSuggestion.js  
+ 
