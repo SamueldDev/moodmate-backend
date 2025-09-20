@@ -29,7 +29,6 @@ app.get("/", (req, res) => {
     res.send("moodmate api is live")
 })
 
-
 // routes
 app.use("/api/user", userRoute)    
 app.use("/api/moods", moodRoute)    
@@ -41,12 +40,9 @@ app.use("/api/suggestions", suggestionRoute)
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
 
-    // await sequelize.sync({ alter: true}) 
-    // console.log("database synced") 
+    await sequelize.sync({ alter: true}) 
+    console.log("database synced") 
     
-     await sequelize.sync({ force: true})
-    console.log("database dropped and recreated") 
-
  
     app.listen(PORT, () => {
     console.log(`server running at port ${PORT}`)     
@@ -65,8 +61,8 @@ export default app
 
 
 
-   //   await sequelize.sync({ force: true})
-    //   console.log("database dropped and recreated")  
+  //   await sequelize.sync({ force: true})
+  //   console.log("database dropped and recreated")  
       
 
 
