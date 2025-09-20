@@ -1,14 +1,14 @@
 
 
+
 import swaggerJSDoc from 'swagger-jsdoc';
-import swaggerUi from "swagger-ui-express"
+import swaggerUi from "swagger-ui-express";
 
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 
 const options = {
   definition: {
@@ -19,14 +19,14 @@ const options = {
       description: 'API documentation for the MoodMate backend',
     },
     servers: [
-        {
-        url: "https://moodmate-backend-production.up.railway.app",
+      {
+        url: "https://moodmate-backend-production-b470.up.railway.app",
         description: "Production server",
       },
-        {
-          url: "http://localhost:3000",
-          description: "Local development server",
-        },
+      {
+        url: "http://localhost:3000",
+        description: "Local development server",
+      },
     ],
     tags: [
       {
@@ -42,25 +42,35 @@ const options = {
         description: 'Authentication endpoints (register/login)',
       },
     ],
+
+    // components + security here
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
+    },
+    security: [
+      {
+        bearerAuth: [],
+      },
+    ],
   },
 
-  apis: [path.resolve(__dirname, '../routes/*.js')], // for ESM
-
+  apis: [path.resolve(__dirname, '../routes/*.js')], // scan routes for JSDoc
 };
-
 
 const swaggerSpec = swaggerJSDoc(options);
 
 export function setupSwagger(app) {
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-  // Serve the raw Swagger JSON 
-    app.get('/api-docs-json', (req, res) => {
+  // Serve the raw Swagger JSON
+  app.get('/api-docs-json', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.send(swaggerSpec);
-    });
+  });
 }
-
-
-
-
