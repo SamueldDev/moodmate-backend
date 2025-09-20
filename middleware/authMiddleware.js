@@ -27,11 +27,8 @@ export const protectedAction = (req, res, next) => {
         data: [],
       });
     }
-
-    req.user = decoded.payload
-
+    req.user = decoded
     next();
   });
-
   
 };

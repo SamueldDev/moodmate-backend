@@ -17,7 +17,7 @@ const router = express.Router()
 
 /**
  * @swagger
- * /api/suggestions/{mood}:
+ * /api/suggestions?mood=sad:
  *   get:
  *     summary: Get suggestions for a specific mood
  *     tags: [Suggestions]
@@ -51,13 +51,13 @@ const router = express.Router()
  *         description: Server error
  */
 
-router.get("/:mood", getSuggestionByMood)
+router.get("/", getSuggestionByMood)
 
 
 
  /**
  * @swagger
- * /api/suggestions:
+ * /api/suggestions/all:
  *   get:
  *     summary: Retrieve all mood suggestions
  *     tags: [Suggestions]
@@ -90,7 +90,7 @@ router.get("/:mood", getSuggestionByMood)
  *         description: Server error
  */
 
-router.get("/", getAllSuggestion)
+router.get("/all", getAllSuggestion)
 
 
 

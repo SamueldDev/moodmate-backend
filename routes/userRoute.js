@@ -15,7 +15,7 @@ const router = express.Router()
 
 /**
  * @swagger
- * /api/users/register:
+ * /api/user/register:
  *   post:
  *     summary: Register a new user
  *     tags: [Auth]
@@ -26,9 +26,13 @@ const router = express.Router()
  *           schema:
  *             type: object
  *             required:
+ *               - name
  *               - email
  *               - password
  *             properties:
+ *               name:
+ *                type: string
+ *                example: John Doe
  *               email:
  *                 type: string
  *                 example: user@example.com
@@ -46,7 +50,7 @@ router.post("/register", createUser)
 
 /**
  * @swagger
- * /api/users/login:
+ * /api/user/login:
  *   post:
  *     summary: Log in a user
  *     tags: [Auth]

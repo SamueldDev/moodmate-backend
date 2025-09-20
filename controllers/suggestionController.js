@@ -4,34 +4,38 @@
 import  Suggestion  from "../models/SuggestionModel.js";
 
 // get suggested mode
+const allowedMoods = ["sad", "tired", "happy", "angry", "relaxed"];
 
-const allowedmoods = ["sad", "tired", "happy", "angry", "relaxed"]
+export const getSuggestionByMood = async (req, res) => {
+  const { mood } = req.query;
 
-export const getSuggestionByMood = async (req, res) =>{
-    const {mood} = req.params
-    
-    if(!allowedmoods.includes(mood)){
-        return res.status(400).json({
-            error: `invalid mood "${mood}". must be one of the ${allowedmoods.join(", ")} ` 
-        })
-    }
+  if (!mood) {
+    return res.status(400).json({
+      error: `mood query parameter is required. Example: /api/suggestions?mood=happy`,
+    });
+  }
 
-    try{
+  if (!allowedMoods.includes(mood)) {
+    return res.status(400).json({
+      error: `Invalid mood "${mood}". Must be one of: ${allowedMoods.join(", ")}`,
+    });
+  }
 
-        const suggestion = await Suggestion.findAll({ 
-            where: { mood },
-            attributes: ["category", "content"]
-        });
-        res.json(suggestion)
+  try {
+    const suggestions = await Suggestion.findAll({
+      where: { mood },
+      attributes: ["category", "content"],
+    });
 
-    }catch(err){
-        res.status(500).json({
-            message: "failed to find suggestion",
-            error: err.message
-        })
-    }
+    res.json(suggestions);
+  } catch (err) {
+    res.status(500).json({
+      message: "Failed to fetch suggestions",
+      error: err.message,
+    });
+  }
+};
 
-}
 
 
 // get all suggestion from the db

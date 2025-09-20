@@ -5,10 +5,8 @@ import sequelize from '../config/db.js';
 
 class Suggestion extends Model {}
 
-
 Suggestion.init(
   {
-    
     category: { 
         type: DataTypes.STRING  // e.g., "quote", "music", "activity"
      },
@@ -19,7 +17,6 @@ Suggestion.init(
          type: DataTypes.ENUM('happy', 'sad', 'tired', 'angry', 'relaxed'),
          allowNull: false 
         }
-
   },
   {
     // Other model options

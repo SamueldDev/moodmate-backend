@@ -29,9 +29,10 @@ app.get("/", (req, res) => {
     res.send("moodmate api is live")
 })
 
-// routes
+// routes  
 app.use("/api/user", userRoute)    
 app.use("/api/moods", moodRoute)    
+
 app.use("/api/suggestions", suggestionRoute)  
 
  const startSever = async () => {      
@@ -40,10 +41,8 @@ app.use("/api/suggestions", suggestionRoute)
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
 
-
     await sequelize.sync({ alter: true}) 
     console.log("database synced") 
-    
  
     app.listen(PORT, () => {
     console.log(`server running at port ${PORT}`)     
@@ -51,21 +50,17 @@ app.use("/api/suggestions", suggestionRoute)
 
     } catch (error) {   
     console.error('Unable to connect to the database:', error);
-    }  
+    }    
  }  
 
 
-startSever()      
+startSever()       
 
 export default app  
-
-
 
 
   //   await sequelize.sync({ force: true})
   //   console.log("database dropped & recreated")  
       
-
-
 
 // node seed/seedSuggestion.js  

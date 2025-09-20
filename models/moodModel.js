@@ -2,7 +2,7 @@
 
 import {Model, DataTypes} from 'sequelize';
 import sequelize from '../config/db.js';
-import User from './UserModel.js';
+///import User from './UserModel.js';
 
 class Mood extends Model {}
 
@@ -17,7 +17,7 @@ Mood.init(
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: User, 
+        model: "mood_users", 
         key: "id",
       },
       onDelete: "CASCADE",
