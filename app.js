@@ -62,7 +62,7 @@ export default app
 
 
   //   await sequelize.sync({ force: true})
-  //   console.log("database dropped and recreated")  
+  //   console.log("database dropped & recreated")  
       
 
 
