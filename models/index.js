@@ -6,7 +6,7 @@ import Mood from "./moodModel.js";
 
 
 // associations
-User.hasMany(Mood, { foreignKey: 'userId' }); // 👈 Add this
+User.hasMany(Mood, { foreignKey: 'userId' }); 
 Mood.belongsTo(User, { foreignKey: 'userId' });
 
 

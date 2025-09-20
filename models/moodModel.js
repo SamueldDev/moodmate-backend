@@ -2,6 +2,7 @@
 
 import {Model, DataTypes} from 'sequelize';
 import sequelize from '../config/db.js';
+import User from './UserModel.js';
 
 class Mood extends Model {}
 
@@ -16,7 +17,7 @@ Mood.init(
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: "users", // must matches Trips table name
+        model: User, 
         key: "id",
       },
       onDelete: "CASCADE",
@@ -25,9 +26,9 @@ Mood.init(
   {
     // Other model options
     sequelize, // pass the connection instance
-    modelName: 'Mood', // model name
-    tableName: "moods", // table name
-    timestamps: true, // timestamp
+    modelName: 'Mood', 
+    tableName: "moods", 
+    timestamps: true, 
   },
 );
 

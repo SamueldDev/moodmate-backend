@@ -28,14 +28,11 @@ User.init(
   {
     // Other model options
     sequelize, // ass the connection instance
-    modelName: 'User', // model name
-    tableName: "mood_users", // table name
-    timestamps: true, // timestamp
+    modelName: 'User', 
+    tableName: "mood_users", 
+    timestamps: true, 
   },
 );
-
-// the defined model is the class itself
-// console.log(User === sequelize.models.User); // true
 
 
 export default User;

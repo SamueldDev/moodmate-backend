@@ -24,9 +24,9 @@ Suggestion.init(
   {
     // Other model options
     sequelize, // pass the connection instance
-    modelName: 'Suggestion', // model name
-    tableName: "suggestions", // table name
-    timestamps: true, // timsestamp
+    modelName: 'Suggestion', 
+    tableName: "suggestions", 
+    timestamps: true, 
   },
 );
 
