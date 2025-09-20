@@ -1,7 +1,5 @@
 
 
-
-
 import express from "express";
 import { sequelize } from "./models/index.js"
 import userRoute from "./routes/userRoute.js"
@@ -10,7 +8,6 @@ import suggestionRoute from "./routes/suggestionRoute.js"
 import moodRoute from "./routes/moodRoute.js"
 import { setupSwagger } from "./config/swagger.js";
 import cors from "cors";   
-
 
 
 import dotenv from "dotenv"
@@ -44,8 +41,11 @@ app.use("/api/suggestions", suggestionRoute)
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
 
-    await sequelize.sync({ alter: true})         
-    console.log("database synced")  
+    // await sequelize.sync({ alter: true}) 
+    // console.log("database synced") 
+    
+     await sequelize.sync({ force: true})
+    console.log("database dropped and recreated") 
 
  
     app.listen(PORT, () => {
